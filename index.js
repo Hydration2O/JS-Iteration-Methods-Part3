@@ -76,16 +76,19 @@ Task 6) Calculate and return the lowest temperature of the month.
        Output 6) 18
 
 ******************************************************************/
-let topTemp=temperatures[0];
-for (let i=0;i<temperatures.length;i++){
-    if (topTemp<temperatures[i]) topTemp=temperatures[i];
-}
+// let topTemp=temperatures[0];
+// for (let i=0;i<temperatures.length;i++){
+//     if (topTemp<temperatures[i]) topTemp=temperatures[i];
+// }
+let topTemp=temperatures.reduce((total,elem)=>(total>elem? total=total:total=elem));
 console.log(`${topTemp}`);
 
-let lowTemp=temperatures[0];
-for (let i=0;i<temperatures.length;i++){
-    if (lowTemp>temperatures[i]) lowTemp=temperatures[i];
-}
+// let lowTemp=temperatures[0];
+// for (let i=0;i<temperatures.length;i++){
+//     if (lowTemp>temperatures[i]) lowTemp=temperatures[i];
+// }
+let lowTemp=temperatures.reduce((total,elem)=>(total<elem? total=total:total=elem));
+
 console.log(`${lowTemp}`);
 
 // Note: Use appropriate JavaScript array iteration methods such as filter, map, reduce, etc., to achieve the desired output for each task.
